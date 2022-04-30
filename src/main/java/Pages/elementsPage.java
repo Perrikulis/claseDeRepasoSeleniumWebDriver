@@ -3,6 +3,7 @@ package Pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.Select;
 
 import java.util.List;
 
@@ -65,6 +66,15 @@ public class elementsPage extends basePage{
     public WebElement getElementSubmit(){
         WebElement elementSubmit = webDriver.findElement(By.cssSelector(elementSubmitButton));
         return elementSubmit;
+    }
+
+    private String dropDownColorsId = "oldSelectMenu";
+    /** DropDown regresa un objeto Select
+     */
+    public Select getDropDownColors () {
+        WebElement colorsDropDown = webDriver.findElement(By.id(dropDownColorsId));
+        Select colorsDropDownSelect = new Select(colorsDropDown);
+        return colorsDropDownSelect;
     }
 
 }

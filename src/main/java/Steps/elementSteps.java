@@ -2,6 +2,11 @@ package Steps;
 
 import org.openqa.selenium.WebDriver;
 import Pages.elementsPage;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.Select;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class elementSteps extends baseSteps{
     elementsPage elementsPage=new elementsPage(webDriver);
@@ -42,5 +47,50 @@ public class elementSteps extends baseSteps{
     public String getTextSubmit(){
         String texto = elementsPage.getElementSubmit().getText();
         return texto;
+    }
+
+    //Seleccionar color favorito por texto visible
+    public void selectFavoriteColor(String color) {
+        Select dropDownColors = elementsPage.getDropDownColors();
+        dropDownColors.selectByVisibleText(color);
+    }
+
+    //Seleccionar color favorito por indice
+    public void selectFavoriteColorIndex(int index) {
+        Select dropDownColors = elementsPage.getDropDownColors();
+        dropDownColors.selectByIndex(index);
+    }
+
+    //Seleccionar color por valor (value="X")
+    public void selectFavoriteColorValue(String value) {
+        Select dropDownColors = elementsPage.getDropDownColors();
+        dropDownColors.selectByValue(value);
+    }
+
+    //Regresar si el Select de colors es multiple
+    public boolean isSelectMultiple(){
+        Select dropDownColors = elementsPage.getDropDownColors();
+        return dropDownColors.isMultiple();
+    }
+
+    //Obtener opcion seleccionada del Select color
+    public String getSelectedColor() {
+        Select dropDownColors = elementsPage.getDropDownColors();
+        WebElement selectedOption = dropDownColors.getFirstSelectedOption();
+        return selectedOption.getText();
+    }
+
+    //Obtener opcion seleccionada del Select color
+    public List<String> getSelectedCarList() {
+        List<String> getSelectedOptions = new ArrayList<>();
+        Select dropDownColors = elementsPage.getDropDownColors();
+        List<WebElement> selectedOptionList = dropDownColors.getAllSelectedOptions();
+        //Llenando lista getSelectedOptions
+        for (WebElement option: selectedOptionList
+             ) {
+            //Obteniendo .getText de cada opcion seleccionada
+            getSelectedOptions.add(option.getText());
+        }
+        return getSelectedOptions;
     }
 }

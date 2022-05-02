@@ -7,8 +7,8 @@ import org.openqa.selenium.support.ui.Select;
 
 import java.util.List;
 
-public class elementsPage extends basePage{
-    public elementsPage(WebDriver webDriver) {
+public class ElementsPage extends BasePage {
+    public ElementsPage(WebDriver webDriver) {
         super(webDriver);
     }
     /** Localizadores CSS de Text Box
@@ -16,6 +16,27 @@ public class elementsPage extends basePage{
      * .show > ul > #item-0 > span
      */
     private String elementOptionCSSLocator =".show > ul > #item-0 > span";
+    /** Localizador CSS de label Full Name en el form
+     *  .col-md-3.col-sm-12>#userName-label
+     */
+    private String elementFullNameFieldCSSLocator = ".col-md-3.col-sm-12>#userName-label";
+    /** Localizador CSS de label Email en el form
+     * .col-md-3.col-sm-12>#userEmail-label
+     */
+    private String elementEmailFieldCSSLocator = ".col-md-3.col-sm-12>#userEmail-label";
+    /** Localizador CSS de label Current Address en el form
+     * .col-md-3.col-sm-12>#currentAddress-label
+     */
+    private String elementCurrentAddressFieldCSSLocator = ".col-md-3.col-sm-12>#currentAddress-label";
+    /** Localizador CSS de label Permanent Address en el form
+     * .col-md-3.col-sm-12>#permanentAddress-label
+     */
+    private String elementPermanentAddressFieldCSSLocator= ".col-md-3.col-sm-12>#permanentAddress-label";
+    /** Localizador CSS de boton Submit en el form
+     * #submit
+     */
+    private String elementSubmitButton = "#submit";
+    private String dropDownColorsId = "oldSelectMenu";
 
     public WebElement getElementOption () {
         WebElement elementOption = webDriver.findElement(By.cssSelector(elementOptionCSSLocator));
@@ -26,49 +47,31 @@ public class elementsPage extends basePage{
         return menuOptionsElements;
     }
 
-    /** Localizador CSS de label Full Name en el form
-     *  .col-md-3.col-sm-12>#userName-label
-     */
-    private String elementFullNameFieldCSSLocator = ".col-md-3.col-sm-12>#userName-label";
-
     public WebElement getElementFullName (){
         WebElement elementOptionFullName = webDriver.findElement(By.cssSelector(elementFullNameFieldCSSLocator));
         return elementOptionFullName;
     }
-    /** Localizador CSS de label Email en el form
-     * .col-md-3.col-sm-12>#userEmail-label
-     */
-    private String elementEmailFieldCSSLocator = ".col-md-3.col-sm-12>#userEmail-label";
+
     public WebElement getElementEmail(){
         WebElement elementEmail = webDriver.findElement(By.cssSelector(elementEmailFieldCSSLocator));
         return elementEmail;
     }
-    /** Localizador CSS de label Current Address en el form
-     * .col-md-3.col-sm-12>#currentAddress-label
-     */
-    private String elementCurrentAddressFieldCSSLocator = ".col-md-3.col-sm-12>#currentAddress-label";
+
     public WebElement getElementCurrentAddress(){
         WebElement elementCurrentAddress = webDriver.findElement(By.cssSelector(elementCurrentAddressFieldCSSLocator));
         return elementCurrentAddress;
     }
-    /** Localizador CSS de label Permanent Address en el form
-     * .col-md-3.col-sm-12>#permanentAddress-label
-     */
-    private String elementPermanentAddressFieldCSSLocator= ".col-md-3.col-sm-12>#permanentAddress-label";
+
     public WebElement getElementPermanentAddress(){
         WebElement elementPermanentAddress = webDriver.findElement(By.cssSelector(elementPermanentAddressFieldCSSLocator));
         return elementPermanentAddress;
     }
-    /** Localizador CSS de boton Submit en el form
-     * #submit
-     */
-    private String elementSubmitButton = "#submit";
+
     public WebElement getElementSubmit(){
         WebElement elementSubmit = webDriver.findElement(By.cssSelector(elementSubmitButton));
         return elementSubmit;
     }
 
-    private String dropDownColorsId = "oldSelectMenu";
     /** DropDown regresa un objeto Select
      */
     public Select getDropDownColors () {

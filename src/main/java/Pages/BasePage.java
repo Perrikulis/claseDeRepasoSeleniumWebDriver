@@ -1,11 +1,11 @@
-package Steps;
+package Pages;
 
 import org.openqa.selenium.WebDriver;
 
-public class baseSteps {
+public class BasePage {
     WebDriver webDriver;
 
-    public baseSteps(WebDriver webDriver) {
+    public BasePage(WebDriver webDriver) {
         this.webDriver = webDriver;
     }
 }

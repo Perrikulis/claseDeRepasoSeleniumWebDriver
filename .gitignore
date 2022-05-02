@@ -8,3 +8,9 @@ target/classes/Pages/elementsPage.class
 .idea/compiler.xml
 .idea/runConfigurations.xml
 .idea/workspace.xml
+.idea/uiDesigner.xml
+target/classes/Pages/basePage.class
+target/classes/Pages/landingPage.class
+target/classes/Steps/baseSteps.class
+target/classes/Steps/landingsSteps.class
+target/test-classes/landingTest.class

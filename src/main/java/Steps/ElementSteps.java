@@ -1,17 +1,17 @@
 package Steps;
 
 import org.openqa.selenium.WebDriver;
-import Pages.elementsPage;
+import Pages.ElementsPage;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class elementSteps extends baseSteps{
-    elementsPage elementsPage=new elementsPage(webDriver);
+public class ElementSteps extends BaseSteps {
+    ElementsPage elementsPage = new ElementsPage(webDriver);
 
-    public elementSteps(WebDriver webDriver) {
+    public ElementSteps(WebDriver webDriver) {
         super(webDriver);
     }
     //Validar que este la opcion Text Box

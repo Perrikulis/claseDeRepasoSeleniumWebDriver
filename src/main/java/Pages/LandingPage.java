@@ -6,10 +6,10 @@ import org.openqa.selenium.WebElement;
 
 import java.util.List;
 
-public class landingPage extends basePage{
+public class LandingPage extends BasePage {
     //WebDriver webDriver;
 
-    public landingPage(WebDriver webDriver) {
+    public LandingPage(WebDriver webDriver) {
         super(webDriver);
     }
 

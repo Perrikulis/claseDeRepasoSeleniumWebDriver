@@ -1,12 +1,12 @@
 package Steps;
 
 import org.openqa.selenium.WebDriver;
-import Pages.landingPage;
+import Pages.LandingPage;
 
-public class landingsSteps extends baseSteps{
-    landingPage landingPage = new landingPage(webDriver);
+public class LandingsSteps extends BaseSteps{
+    LandingPage landingPage = new LandingPage(webDriver);
 
-    public landingsSteps(WebDriver webDriver) {
+    public LandingsSteps(WebDriver webDriver) {
         super(webDriver);
     }
     //Dar click en la opcion Elements

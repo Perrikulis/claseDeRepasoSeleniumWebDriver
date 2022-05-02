@@ -1,13 +1,13 @@
-import Steps.elementSteps;
-import Steps.landingsSteps;
+import Steps.ElementSteps;
+import Steps.LandingsSteps;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import java.sql.SQLOutput;
 
-public class landingTest extends baseTest{
-    elementSteps elementSteps =new elementSteps(webDriver);
-    landingsSteps landingsSteps =new landingsSteps(webDriver);
+public class LandingTest extends baseTest{
+    ElementSteps elementSteps =new ElementSteps(webDriver);
+    LandingsSteps landingsSteps =new LandingsSteps(webDriver);
 
     @Test
     public void testMenuOptionElement() {

@@ -7,16 +7,17 @@ import org.openqa.selenium.WebElement;
 import java.util.List;
 
 public class LandingPage extends BasePage {
-    //WebDriver webDriver;
 
+    //Constructor
     public LandingPage(WebDriver webDriver) {
         super(webDriver);
     }
 
-    private String menuOptionsCSSLocator = "div.card.mt-4.top-card";
+    //private By menuOptionsCSSLocator = By.cssSelector("div.card.mt-4.top-card");
+    private By menuOptionsXpath = By.xpath("//div[@class='card mt-4 top-card']");
 
-    public List<WebElement> getMenuOptions(){
-        List<WebElement> menuOptions = webDriver.findElements(By.cssSelector(menuOptionsCSSLocator));
+    public List<WebElement> getMenuOptions() {
+        List<WebElement> menuOptions = webDriver.findElements(menuOptionsXpath);
         return menuOptions;
     }
 }

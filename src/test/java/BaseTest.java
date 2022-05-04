@@ -5,7 +5,7 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 
-public class baseTest {
+public class BaseTest {
     private String pathToChromeDriver = "/Users/jxr20920/Downloads/chromedriver";
 
     public WebDriver webDriver = getChromeWebDriver();

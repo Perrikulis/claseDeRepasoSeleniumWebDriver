@@ -5,7 +5,7 @@ import org.testng.annotations.Test;
 
 import java.sql.SQLOutput;
 
-public class LandingTest extends baseTest{
+public class LandingTest extends BaseTest{
     ElementSteps elementSteps =new ElementSteps(webDriver);
     LandingsSteps landingsSteps =new LandingsSteps(webDriver);
 

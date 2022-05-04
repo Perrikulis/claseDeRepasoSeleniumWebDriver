@@ -16,14 +16,17 @@ public class ElementsPage extends BasePage {
      * .show > ul > #item-0 > span
      */
     private String elementOptionCSSLocator =".show > ul > #item-0 > span";
+    private String elementTextBoxOptionXpath = "//span[contains(text(),'Text Box')]";
     /** Localizador CSS de label Full Name en el form
      *  .col-md-3.col-sm-12>#userName-label
      */
     private String elementFullNameFieldCSSLocator = ".col-md-3.col-sm-12>#userName-label";
+    private String labelFullNameXpath = "//label[@id='userName-label']";
     /** Localizador CSS de label Email en el form
      * .col-md-3.col-sm-12>#userEmail-label
      */
     private String elementEmailFieldCSSLocator = ".col-md-3.col-sm-12>#userEmail-label";
+    private String labelUserEmailXpath = "//label[@id='userEmail-label']";
     /** Localizador CSS de label Current Address en el form
      * .col-md-3.col-sm-12>#currentAddress-label
      */

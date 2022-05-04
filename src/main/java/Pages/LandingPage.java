@@ -13,6 +13,7 @@ public class LandingPage extends BasePage {
     }
 
     private String menuOptionsCSSLocator = "div.card.mt-4.top-card";
+    private String menuOptionsXpath = "//div[@class='card mt-4 top-card']//h5[contains(text(),'Elements')]";
 
     public List<WebElement> getMenuOptions(){
         List<WebElement> menuOptions = webDriver.findElements(By.cssSelector(menuOptionsCSSLocator));

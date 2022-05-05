@@ -4,7 +4,8 @@ import Steps.ElementSteps;
 
 public class ElementTest extends BaseTest {
 
-    ElementSteps elementsSteps = new ElementSteps(webDriver);
+    ElementSteps elementSteps = new ElementSteps(webDriver);
+    LandingsSteps landingsSteps =new LandingsSteps(webDriver);
 
     @Test
     public void testTextBoxForm() {
@@ -47,7 +48,7 @@ public class ElementTest extends BaseTest {
         elementsSteps.clickSubmitButton();
         Assert.assertTrue(elementsSteps.emailResultIsDisplayed(), "Email is not displayed. Wrong email input.");
     }
-
+  
     @Test
     public void colorDropDownTest() {
         webDriver.get("https://demoqa.com/select-menu");

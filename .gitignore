@@ -15,3 +15,4 @@ target/classes/Steps/baseSteps.class
 target/classes/Steps/landingsSteps.class
 target/test-classes/landingTest.class
 target/classes/.DS_Store
+.idea/vcs.xml

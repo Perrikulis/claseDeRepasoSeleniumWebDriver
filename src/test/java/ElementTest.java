@@ -2,12 +2,12 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import Steps.ElementSteps;
 
-public class ElementTest extends baseTest {
+public class ElementTest extends BaseTest {
 
     ElementSteps elementsSteps = new ElementSteps(webDriver);
 
     @Test
-    public void testTextBoxForm() {<
+    public void testTextBoxForm() {
         //Requirement 2. When clicking Text Box option on left menu, form with fields: Full Name, Email, Current Address,
         //               Permanent Address and Submit Button must be displayed.
 

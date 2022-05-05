@@ -3,7 +3,7 @@ import Steps.LandingsSteps;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class LandingTest extends baseTest {
+public class LandingTest extends BaseTest {
 
     LandingsSteps landingSteps = new LandingsSteps(webDriver);
     ElementSteps elementsSteps = new ElementSteps(webDriver);

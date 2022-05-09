@@ -37,9 +37,15 @@ public class ElementsPage extends BasePage {
     private String elementPermanentAddressFieldCSSLocator= ".col-md-3.col-sm-12>#permanentAddress-label";
     /** Localizador CSS de boton Submit en el form
      * #submit
+     *
+     * Se agregan además localizadores xpath
      */
     private String elementSubmitButton = "#submit";
+    private String elementSubmitButtonXpath = "//button[@id='submit']";
     private String dropDownColorsId = "oldSelectMenu";
+    private String dropDownColorsXpath = "//select[@id='oldSelectMenu']";
+    public final String dropDownCarsId = "cars";
+    public final String dropDownCarsXpath = "//select[@id='cars']";
 
     public WebElement getElementOption () {
         WebElement elementOption = webDriver.findElement(By.cssSelector(elementOptionCSSLocator));
@@ -75,12 +81,18 @@ public class ElementsPage extends BasePage {
         return elementSubmit;
     }
 
-    /** DropDown regresa un objeto Select
+    /** DropDown regresa un objeto Select para Colors
      */
     public Select getDropDownColors () {
         WebElement colorsDropDown = webDriver.findElement(By.id(dropDownColorsId));
         Select colorsDropDownSelect = new Select(colorsDropDown);
         return colorsDropDownSelect;
     }
-
+    /** DrowDown regresa un objeto Select para Cars
+     */
+    public Select getDropDownCars(){
+        WebElement carsDropDown = webDriver.findElement(By.id(dropDownCarsId));
+        Select carsDropDownSelect = new Select(carsDropDown);
+        return carsDropDownSelect;
+    }
 }

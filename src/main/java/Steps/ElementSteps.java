@@ -93,4 +93,33 @@ public class ElementSteps extends BaseSteps {
         }
         return getSelectedOptions;
     }
+    public void selectCar(String car){
+        Select dropDownCars = elementsPage.getDropDownCars();
+        dropDownCars.selectByVisibleText(car);
+    }
+    /** DropDown selected by Index
+     */
+    public void selectCarByIndex(int index){
+        Select dropDownCars = elementsPage.getDropDownCars();
+        dropDownCars.selectByIndex(index);
+    }
+    /** DropDown selected by Value
+     */
+    public void selectCarByValue(String car){
+        Select dropDownCars = elementsPage.getDropDownCars();
+        dropDownCars.selectByValue(car);
+    }
+    /** DropDown validate if Select Multiple
+     */
+    public Boolean isSelectMultipleCars(){
+        Select dropDownCars = elementsPage.getDropDownCars();
+        return dropDownCars.isMultiple();
+    }
+    /** DropDown return option selected
+     */
+    public String getSelectedCar(){
+        Select dropDownCars = elementsPage.getDropDownCars();
+        WebElement selectedCarOption = dropDownCars.getFirstSelectedOption();
+        return selectedCarOption.getText();
+    }
 }

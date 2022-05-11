@@ -1,4 +1,4 @@
-
+.idea/*
 target/*
 target/classes/.DS_Store
 target/test-classes/elementTest.class
@@ -16,3 +16,24 @@ target/classes/Steps/landingsSteps.class
 target/test-classes/landingTest.class
 target/classes/.DS_Store
 .idea/vcs.xml
+test-results/bullet_point.png
+test-results/collapseall.gif
+*.html
+test-results/Elements Tests/_Users_jxr20920_Downloads_claseRepaso.xml
+test-results/Elements Tests/testng-failed.xml
+test-results/failed.png
+test-results/jquery.min.js
+test-results/junitreports/TEST-ElementTest.xml
+test-results/navigator-bullet.png
+test-results/old/Elements Tests/_Users_jxr20920_Downloads_claseRepaso.properties
+test-results/passed.png
+test-results/testng-failed.xml
+test-results/testng-reports.css
+test-results/skipped.png
+test-results/testng-reports.js
+test-results/testng-reports1.css
+test-results/testng-reports2.js
+test-results/testng-results.xml
+test-results/testng.css
+
+src/test/java/BaseTest.java

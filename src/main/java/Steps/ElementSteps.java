@@ -1,9 +1,11 @@
 package Steps;
 
 import Pages.LandingPage;
+import Pages.SPNFutbolPage;
 import org.openqa.selenium.WebDriver;
 import Pages.ElementsPage;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 
 import java.util.ArrayList;
@@ -11,7 +13,9 @@ import java.util.List;
 
 public class ElementSteps extends BaseSteps {
 
-    ElementsPage elementsPage = new ElementsPage(webDriver);
+    ElementsPage elementsPage = PageFactory.initElements(webDriver, ElementsPage.class);
+
+    //ElementsPage elementsPage = new ElementsPage(webDriver);
     LandingPage landingPage = new LandingPage(webDriver);
 
     public ElementSteps(WebDriver webDriver) {

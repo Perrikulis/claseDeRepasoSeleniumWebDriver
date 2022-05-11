@@ -3,6 +3,8 @@ package Pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.ui.Select;
 
 import java.util.List;
@@ -12,117 +14,137 @@ public class ElementsPage extends BasePage {
         super(webDriver);
     }
 
-    private String elementOptionCSSLocator = ".element-list.collapse.show > ul > #item-0 > span";
-    private String elementOptTBXpathLocator = "(//span[contains(@class,\"text\")])[1]";
 
-    //span[contains(text(),"Text Box")]
-    private String fUllNameXpathLocator = "//label[@id=\"userName-label\"]";
-    private String emailXpathLocator = "//label[@id=\"userEmail-label\"]";
-    private String currentAddressXpathLocator = "//label[@id=\"currentAddress-label\"]";
-    private String permanentAddressXpathLocator = "//label[@id=\"permanentAddress-label\"]";
-    private String submitBtnXpathLocator = "//button[@id=\"submit\"]";
+    @FindBy(how = How.CSS, using = "element-list.collapse.show > ul > #item-0 > span\"")
+    private WebElement elementOptionCSSLocator;
+    @FindBy(how = How.CSS, using = "(//span[contains(@class,\"text\")])[1]")
+    private WebElement elementOptTBXpathLocator;
 
-    private String fUllNameTBXpathLocator = "//input[@id=\"userName\"]";
-    private String emailXTBpathLocator = "//input[@id=\"userEmail\"]";
-    private String currentAddressTBXpathLocator = "//textarea[@id=\"currentAddress\"]";
-    private String permanentAddressTBXpathLocator = "//textarea[@id=\"permanentAddress\"]";
-    private String submitBtnTBXpathLocator = "//button[@id=\"submit\"]";
+
+    @FindBy(how = How.XPATH, using = "//label[@id=\"userName-label\"]")
+    private WebElement fUllNameXpathLocator;
+    @FindBy(how = How.XPATH, using = "//label[@id=\"userEmail-label\"]")
+    private WebElement emailXpathLocator;
+    @FindBy(how = How.XPATH, using = "//label[@id=\"currentAddress-label\"]")
+    private WebElement currentAddressXpathLocator;
+    @FindBy(how = How.XPATH, using = "//label[@id=\"permanentAddress-label\"]")
+    private WebElement permanentAddressXpathLocator;
+    @FindBy(how = How.XPATH, using = "//button[@id=\"submit\"]")
+    private WebElement submitBtnXpathLocator;
+
+
+    @FindBy(how = How.XPATH, using = "//input[@id=\"userName\"]")
+    private WebElement fUllNameTBXpathLocator;
+    @FindBy(how = How.XPATH, using = "//input[@id=\"userEmail\"]")
+    private WebElement emailXTBpathLocator;
+    @FindBy(how = How.XPATH, using = "//textarea[@id=\"currentAddress\"]")
+    private WebElement currentAddressTBXpathLocator;
+    @FindBy(how = How.XPATH, using = "//textarea[@id=\"permanentAddress\"]")
+    private WebElement permanentAddressTBXpathLocator;
+    @FindBy(how = How.XPATH, using = "//button[@id=\"submit\"]")
+    private WebElement submitBtnTBXpathLocator;
 
     //Results fields
-    private String resultFormNameXpathLocator = "//p[@id=\"name\"]";
-    private String resultFormEmailXpathLocator = "//p[@id=\"email\"]";
-    private String resultFormCurrentAddressXpathLocator = "//p[@id=\"currentAddress\"]";
-    private String resultFormPermanentAddressXpathLocator = "//p[@id=\"permanentAddress\"]";
 
-    private String resultFormXpathLocator = "//div[@id=\"output\"]";
+
+    @FindBy(how = How.XPATH, using = "//p[@id=\"name\"]")
+    private WebElement resultFormNameXpathLocator;
+    @FindBy(how = How.XPATH, using = "//p[@id=\"email\"]")
+    private WebElement resultFormEmailXpathLocator;
+    @FindBy(how = How.XPATH, using = "//p[@id=\"currentAddress\"]")
+    private WebElement resultFormCurrentAddressXpathLocator;
+    @FindBy(how = How.XPATH, using = "//p[@id=\"permanentAddress\"]")
+    private WebElement resultFormPermanentAddressXpathLocator;
+    @FindBy(how = How.XPATH, using = "//div[@id=\"output\"]")
+    private WebElement resultFormXpathLocator;
 
     //obtener output value
     public WebElement getOutPut() {
-        WebElement OutPutValue = webDriver.findElement(By.xpath(resultFormXpathLocator));
-        return OutPutValue;
+
+        return resultFormXpathLocator;
     }
 
     //obtener el texto de los resultados
     public WebElement getResultName() {
-        WebElement textResultName = webDriver.findElement(By.xpath(resultFormNameXpathLocator));
-        return textResultName;
+
+        return resultFormNameXpathLocator;
     }
 
     public WebElement getResultEmail() {
-        WebElement textResultEmail = webDriver.findElement(By.xpath(resultFormEmailXpathLocator));
-        return textResultEmail;
+
+        return resultFormEmailXpathLocator;
     }
 
     public WebElement getResultcurrentAddress() {
-        WebElement textResultCurrentAddress = webDriver.findElement(By.xpath(resultFormCurrentAddressXpathLocator));
-        return textResultCurrentAddress;
+
+        return resultFormCurrentAddressXpathLocator;
     }
 
     public WebElement getResultpermanAddress() {
-        WebElement textResultPermanAddres = webDriver.findElement(By.xpath(resultFormPermanentAddressXpathLocator));
-        return textResultPermanAddres;
+
+        return resultFormPermanentAddressXpathLocator;
     }
 
     //optener los campos de TB
     public WebElement getFielTBdFullName() {
-        WebElement elementOptTBFullName = webDriver.findElement(By.xpath(fUllNameTBXpathLocator));
-        return elementOptTBFullName;
+
+        return fUllNameTBXpathLocator;
     }
 
     public WebElement getFielTBdemail() {
-        WebElement elementOptTBemail = webDriver.findElement(By.xpath(emailXTBpathLocator));
-        return elementOptTBemail;
+
+        return emailXTBpathLocator;
     }
 
     public WebElement getFielTBcurrentAddress() {
-        WebElement elementOptTBcurrentAddress = webDriver.findElement(By.xpath(currentAddressTBXpathLocator));
-        return elementOptTBcurrentAddress;
+
+        return currentAddressTBXpathLocator;
     }
 
     public WebElement getFielTBpermanentAddress() {
-        WebElement elementOptTBpermanentAddress = webDriver.findElement(By.xpath(permanentAddressTBXpathLocator));
-        return elementOptTBpermanentAddress;
+
+        return permanentAddressTBXpathLocator;
     }
 
     public WebElement getBtnSubmit() {
-        WebElement elementOptBtnSubmit = webDriver.findElement(By.xpath(submitBtnTBXpathLocator));
-        return elementOptBtnSubmit;
+
+        return submitBtnTBXpathLocator;
     }
 
     public WebElement getElementOption() {
-        WebElement elementOption = webDriver.findElement(By.cssSelector(elementOptionCSSLocator));
-        return elementOption;
+
+        return elementOptionCSSLocator;
     }
 
     public WebElement getElementTBOpt() {
-        WebElement elementTBOpt = webDriver.findElement(By.xpath(elementOptTBXpathLocator));
-        return elementTBOpt;
+
+        return elementOptTBXpathLocator;
     }
 
     //Obtener los campos existentes:
     public WebElement getFieldFullName() {
-        WebElement elementOptionFullName = webDriver.findElement(By.xpath(fUllNameXpathLocator));
-        return elementOptionFullName;
+
+        return fUllNameXpathLocator;
     }
 
     public WebElement getFieldEmail() {
-        WebElement elementEmail = webDriver.findElement(By.xpath(emailXpathLocator));
-        return elementEmail;
+
+        return emailXpathLocator;
     }
 
     public WebElement getFieldCurrentAddress() {
-        WebElement elementCurrentAddress = webDriver.findElement(By.xpath(currentAddressXpathLocator));
-        return elementCurrentAddress;
+
+        return currentAddressXpathLocator;
     }
 
     public WebElement getFieldPermanentAddress() {
-        WebElement elementPermanentAddress = webDriver.findElement(By.xpath(permanentAddressXpathLocator));
-        return elementPermanentAddress;
+
+        return permanentAddressXpathLocator;
     }
 
     public WebElement getButtonSubmit() {
-        WebElement elementSubmit = webDriver.findElement(By.xpath(submitBtnXpathLocator));
-        return elementSubmit;
+
+        return submitBtnXpathLocator;
     }
 
 

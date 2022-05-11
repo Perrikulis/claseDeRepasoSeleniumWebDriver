@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="ESPN Tests">
+    <test verbose="2" preserve-order="true"
+          name="C:/Users/mario/Desktop/desk_23-10-2021/SeleniumCurso03-2022/claseDeRepasoSeleniumWebDriver">
+
+        <groups>
+            <run>
+                <include name="ESPNTests"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="SPNFtbolTest"/>
+        </classes>
+    </test>
+</suite>
+

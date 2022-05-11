@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Element Tests]">
+  <test thread-count="5" name="C:/Users/mario/Desktop/desk_23-10-2021/SeleniumCurso03-2022/claseDeRepasoSeleniumWebDriver(failed)">
+    <classes>
+      <class name="ElementTest">
+        <methods>
+          <include name="afterMethod"/>
+          <include name="beforeMethod"/>
+          <include name="testFormElements"/>
+        </methods>
+      </class> <!-- ElementTest -->
+    </classes>
+  </test> <!-- C:/Users/mario/Desktop/desk_23-10-2021/SeleniumCurso03-2022/claseDeRepasoSeleniumWebDriver(failed) -->
+</suite> <!-- Failed suite [Element Tests] -->

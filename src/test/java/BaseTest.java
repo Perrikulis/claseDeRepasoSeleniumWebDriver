@@ -3,8 +3,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
+import org.testng.annotations.*;
 
 public class BaseTest {
 
@@ -22,16 +21,16 @@ public class BaseTest {
         return new ChromeDriver(chromeOptions);
     }
 
-    @BeforeClass
-    public void beforeClass() {
+    @BeforeMethod
+    public void beforeMethod() {
         webDriver.get("https://demoqa.com/");
         webDriver.manage().window().maximize();
         JavascriptExecutor js = (JavascriptExecutor) webDriver;
         js.executeScript("window.scrollBy(0,500)");
     }
 
-    @AfterClass
-    public void afterClass() {
+    @AfterTest
+    public void afterMethod() {
         webDriver.quit();
     }
 }

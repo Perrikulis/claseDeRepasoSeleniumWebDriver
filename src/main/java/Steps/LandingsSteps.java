@@ -1,11 +1,14 @@
 package Steps;
 
+import Pages.ElementsPage;
 import org.openqa.selenium.WebDriver;
 import Pages.LandingPage;
+import org.openqa.selenium.support.PageFactory;
 
 public class LandingsSteps extends BaseSteps {
 
-    LandingPage landingPage = new LandingPage(webDriver);
+
+    LandingPage landingPage = PageFactory.initElements(webDriver, LandingPage.class);
 
     public LandingsSteps(WebDriver webDriver) {
         super(webDriver);

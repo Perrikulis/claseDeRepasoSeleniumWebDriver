@@ -3,16 +3,17 @@ import Steps.ElementSteps;
 import Steps.LandingsSteps;
 import org.openqa.selenium.JavascriptExecutor;
 import org.testng.Assert;
+import org.testng.Reporter;
 import org.testng.annotations.Test;
 
-public class ElementTest extends BaseTest{
+public class ElementTest extends BaseTest {
 
     ElementSteps elementStep = new ElementSteps(webDriver);
     LandingsSteps landingStep = new LandingsSteps(webDriver);
     ElementsPage elementsPage = new ElementsPage(webDriver);
 
-    //Req 2
-    @Test
+    //Req 2--When Clicking option elements, Text Box option menu must be displayed on menu on left
+    @Test(description = "Test form is present in TextBox menu option",groups = {"SmokeTests"})
     public void testFormElements() {
         landingStep.clicOPtion(0);
         elementStep.clickTextBoxOpt();
@@ -27,9 +28,12 @@ public class ElementTest extends BaseTest{
         System.out.println(elementStep.getTextSubmit());
         Assert.assertEquals(elementStep.getTextSubmit(), "Submit");
     }
-    //Req 3
-    @Test
+
+    //Req 3--When invalid email is input in Text Box form and clicking sugmit button, form must no be submitted
+    @Test(description = "Test form outcome is not present when user entered an invalid value for email", groups = {"SmokeTests"})
     public void testFormSubmitInvalidEmail() {
+        Reporter.log("This Log es una prueba**********---- *********");
+        Reporter.log("This Log es una prueba**********---- *********");
         landingStep.clicOPtion(0);
         elementStep.clickTextBoxOpt();
         elementsPage.getFielTBdFullName().sendKeys("Mario Veri");
@@ -42,8 +46,9 @@ public class ElementTest extends BaseTest{
 
         Assert.assertFalse(elementStep.getoutputPresent());
     }
-    //Req 4
-    @Test
+
+    //Req 4--When valid mail is input in Text Box form, clicking submit button will display information form
+    @Test(description = "Test form outcome is present correctly, when user entered an invalid value for email", groups = {"SmokeTests"})
     public void testFormSubmitValidEmail() {
         landingStep.clicOPtion(0);
         elementStep.clickTextBoxOpt();
@@ -55,7 +60,6 @@ public class ElementTest extends BaseTest{
         JavascriptExecutor js = (JavascriptExecutor) webDriver;
         js.executeScript("window.scrollBy(0,500)");
         elementStep.clickBtmSubmit();
-
 
         Assert.assertTrue(elementStep.getoutputPresent());
 

@@ -3,6 +3,8 @@ package Pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.How;
 
 import java.util.List;
 
@@ -13,19 +15,22 @@ public class LandingPage extends BasePage {
     }
 
     //localizador de una lista con CSSLocator de clase
-    private String menuOptionsCSSLocator = "div.card.mt-4.top-card";
-    private String menuOptionsXpath = "//div[@class=\"card-body\"]";
+    @FindBy(how = How.XPATH, using = "div.card.mt-4.top-card")
+    private WebElement menuOptionsCSSLocator;
+    @FindBy(how = How.XPATH, using = "//div[@class=\"card-body\"]")
+    private WebElement menuOptionsXpath;
+
 
     //metodo public para obtener la lista
     public List<WebElement> getMenuOptions() {
-        List<WebElement> menuOptions = webDriver.findElements(By.xpath(menuOptionsXpath));
-        return menuOptions;
+
+        return (List<WebElement>) menuOptionsXpath;
 
     }
 
     public WebElement getTexBoxOption() {
-        WebElement textBoxOption = webDriver.findElement(By.xpath(menuOptionsXpath));
-        return textBoxOption;
+
+        return menuOptionsXpath;
     }
 
 }

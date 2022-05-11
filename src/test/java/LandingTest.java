@@ -9,13 +9,13 @@ public class LandingTest extends BaseTest{
     ElementSteps elementSteps =new ElementSteps(webDriver);
     LandingsSteps landingsSteps =new LandingsSteps(webDriver);
 
-    @Test
+    @Test (description = "Test MenuOption", groups = "FormElementsTest")
     public void testMenuOptionElement() {
         landingsSteps.clickOption(0);
         System.out.println(elementSteps.getText());
         Assert.assertEquals(elementSteps.getText(), "Text Box");
     }
-    @Test
+    @Test (description = "Test Elements in Form", groups = "FormElementsTest")
     public void testFormElements() {
         landingsSteps.clickOption(0);
         elementSteps.clickOptionTextBox(0);
@@ -31,7 +31,7 @@ public class LandingTest extends BaseTest{
         Assert.assertEquals(elementSteps.getTextSubmit(),"Submit");
     }
 
-    @Test
+    @Test (description = "Test Elements are displayed in Form", groups = "FormElementsTest")
     public void testFiveElementsAreDisplayed(){
         landingsSteps.clickOption(0);
         elementSteps.clickOptionTextBox(0);

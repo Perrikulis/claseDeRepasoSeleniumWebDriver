@@ -35,3 +35,4 @@ test-results/testng-reports1.css
 test-results/testng-reports2.js
 test-results/testng-results.xml
 test-results/testng.css
+test-results/*

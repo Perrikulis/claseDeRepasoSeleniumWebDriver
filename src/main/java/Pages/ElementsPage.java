@@ -3,6 +3,9 @@ package Pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.How;
+import org.openqa.selenium.support.PageFactoryFinder;
 import org.openqa.selenium.support.ui.Select;
 
 import java.util.List;
@@ -47,52 +50,73 @@ public class ElementsPage extends BasePage {
     public final String dropDownCarsId = "cars";
     public final String dropDownCarsXpath = "//select[@id='cars']";
 
+    /**
+    * Se agrega el uso de PageFactory
+     */
+    @FindBy(how = How.XPATH, using = "//span[contains(text(),'Text Box')]")
+    private WebElement elementOption;
+
+    @FindBy(how = How.CSS, using = ".show > ul > #item-0 > span")
+    private List<WebElement> menuOptionElements;
+
+    @FindBy(how = How.XPATH, using = "//label[@id='userName-label']")
+    private WebElement labelFullName;
+
+    @FindBy(how = How.XPATH, using = "//label[@id='userEmail-label']")
+    private WebElement labelUserEmail;
+
+    @FindBy(how = How.CSS, using = ".col-md-3.col-sm-12>#currentAddress-label")
+    private WebElement elementCurrentAddressField;
+
+    @FindBy(how = How.CSS, using = ".col-md-3.col-sm-12>#permanentAddress-label")
+    private WebElement elementPermanentAddressField;
+
+    @FindBy(how = How.XPATH, using = "//button[@id='submit']")
+    private WebElement submitButton;
+
+    @FindBy(how = How.XPATH, using = "//select[@id='oldSelectMenu']")
+    private WebElement dropDownColors;
+
+    @FindBy(how = How.XPATH, using = "//select[@id='cars']")
+    private WebElement dropDownCars;
+
     public WebElement getElementOption () {
-        WebElement elementOption = webDriver.findElement(By.cssSelector(elementOptionCSSLocator));
         return elementOption;
     }
     public List<WebElement> getMenuOptionsElements (){
-        List<WebElement> menuOptionsElements = webDriver.findElements(By.cssSelector(elementOptionCSSLocator));
-        return menuOptionsElements;
+        return menuOptionElements;
     }
 
     public WebElement getElementFullName (){
-        WebElement elementOptionFullName = webDriver.findElement(By.cssSelector(elementFullNameFieldCSSLocator));
-        return elementOptionFullName;
+        return labelFullName;
     }
 
     public WebElement getElementEmail(){
-        WebElement elementEmail = webDriver.findElement(By.cssSelector(elementEmailFieldCSSLocator));
-        return elementEmail;
+        return labelUserEmail;
     }
 
     public WebElement getElementCurrentAddress(){
-        WebElement elementCurrentAddress = webDriver.findElement(By.cssSelector(elementCurrentAddressFieldCSSLocator));
-        return elementCurrentAddress;
+        return elementCurrentAddressField;
     }
 
     public WebElement getElementPermanentAddress(){
-        WebElement elementPermanentAddress = webDriver.findElement(By.cssSelector(elementPermanentAddressFieldCSSLocator));
-        return elementPermanentAddress;
+        return elementPermanentAddressField;
     }
 
     public WebElement getElementSubmit(){
-        WebElement elementSubmit = webDriver.findElement(By.cssSelector(elementSubmitButton));
-        return elementSubmit;
+        return submitButton;
     }
 
     /** DropDown regresa un objeto Select para Colors
      */
     public Select getDropDownColors () {
-        WebElement colorsDropDown = webDriver.findElement(By.id(dropDownColorsId));
-        Select colorsDropDownSelect = new Select(colorsDropDown);
+        Select colorsDropDownSelect = new Select(dropDownColors);
         return colorsDropDownSelect;
     }
     /** DrowDown regresa un objeto Select para Cars
      */
     public Select getDropDownCars(){
-        WebElement carsDropDown = webDriver.findElement(By.id(dropDownCarsId));
-        Select carsDropDownSelect = new Select(carsDropDown);
+        Select carsDropDownSelect = new Select(dropDownCars);
         return carsDropDownSelect;
     }
 }

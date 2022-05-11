@@ -1,3 +1,4 @@
+import Steps.ESPNStep;
 import Steps.ElementSteps;
 import Steps.LandingsSteps;
 import org.testng.Assert;
@@ -6,16 +7,19 @@ import org.testng.annotations.Test;
 import java.sql.SQLOutput;
 
 public class LandingTest extends BaseTest{
-    ElementSteps elementSteps =new ElementSteps(webDriver);
-    LandingsSteps landingsSteps =new LandingsSteps(webDriver);
+    //ElementSteps elementSteps =new ElementSteps(webDriver);
+    Steps.ElementSteps elementSteps= new ElementSteps(webDriver);
+    //LandingsSteps landingsSteps =new LandingsSteps(webDriver);
+    Steps.LandingsSteps landingsSteps= new LandingsSteps(this.webDriver);
 
-    @Test
+
+    @Test(description = "Test Menu Option Element", groups = "LandingTests")
     public void testMenuOptionElement() {
         landingsSteps.clickOption(0);
         System.out.println(elementSteps.getText());
         Assert.assertEquals(elementSteps.getText(), "Text Box");
     }
-    @Test
+    @Test(description = "Test that Form Label Elements are present", groups = "LandingTests")
     public void testFormElements() {
         landingsSteps.clickOption(0);
         elementSteps.clickOptionTextBox(0);
@@ -31,7 +35,7 @@ public class LandingTest extends BaseTest{
         Assert.assertEquals(elementSteps.getTextSubmit(),"Submit");
     }
 
-    @Test
+    @Test(description = "Test that Five Elements are displayed", groups = "LandingTests")
     public void testFiveElementsAreDisplayed(){
         landingsSteps.clickOption(0);
         elementSteps.clickOptionTextBox(0);

@@ -5,7 +5,7 @@ public class ESPNTest extends BaseTest{
 
     Steps.ESPNStep ESPNStep = new ESPNStep(this.webDriver);
 
-    @Test
+    @Test(description = "Test Categorías de Futbol", groups = "ESPNTests")
     public void testFutbolCategory() {
         webDriver.get("https://www.espn.com.mx/futbol/torneos");
         System.out.println(ESPNStep.getMexicoConcacafElements());

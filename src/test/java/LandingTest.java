@@ -30,4 +30,27 @@ public class LandingTest extends BaseTest{
         System.out.println(elementSteps.getTextSubmit());
         Assert.assertEquals(elementSteps.getTextSubmit(),"Submit");
     }
+
+    @Test
+    public void testFiveElementsAreDisplayed(){
+        landingsSteps.clickOption(0);
+        elementSteps.clickOptionTextBox(0);
+        System.out.println("----------a click in Text Box option--------------");
+
+        System.out.println("----------USER NAME--------------");
+        Assert.assertTrue(landingsSteps.userNameTextBoxIsDisplayed(), "not ok");
+
+        System.out.println("----------USER MAIL--------------");
+        Assert.assertTrue(landingsSteps.userMailTextBoxIsDisplayed(), "not ok");
+
+        System.out.println("----------CURRENT ADDRESS--------------");
+        Assert.assertTrue(landingsSteps.currentAddressTextBoxIsDisplayed(), "not ok");
+
+        System.out.println("----------PERMANENT ADDRESS--------------");
+        Assert.assertTrue(landingsSteps.permanentAddressTextBoxisDisplayed(), "not ok");
+
+        System.out.println("----------BUTTON--------------");
+        Assert.assertTrue(landingsSteps.buttonIsDisplayed(), "not ok");
+
+    }
 }

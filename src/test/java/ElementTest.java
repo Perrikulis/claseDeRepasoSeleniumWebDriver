@@ -30,4 +30,21 @@ public class ElementTest extends BaseTest{
         //Print if Select object is multiple
         System.out.println("Is Select multiple? " + elementSteps.isSelectMultiple());
     }
+
+    /** Test que valida el Drop Down para la selección de carros
+     */
+    @Test
+    public void dropDownCarTest(){
+        webDriver.get("https://demoqa.com/select-menu");
+        elementSteps.selectCar("Audi");
+        System.out.println("El carro seleccionado es: " + elementSteps.getSelectedCar());
+        //Select by index: 3
+        elementSteps.selectCarByIndex(2);
+        System.out.println("El carro seleccionado es: " + elementSteps.getSelectedCar());
+        //Select by value: 9
+        elementSteps.selectCarByValue("saab");
+        System.out.println("El carro seleccionado es: " + elementSteps.getSelectedCar());
+        //Print if Select object is multiple
+        System.out.println("Is Select multiple? " + elementSteps.isSelectMultipleCars());
+    }
 }

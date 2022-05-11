@@ -3,6 +3,8 @@ package Pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.How;
 
 import java.util.List;
 
@@ -13,54 +15,73 @@ public class ESPNPage {
         this.webDriverHome = webDriverHome;
     }
 
-    //  TITUTLOS
-    private final String XPATHselector_mexicoConcacaf_title = "//*[@id='usaMexicoCONCACAF']";
-    private final String XPATHselector_europe_title = "//*[@id='europe']";
-    private final String XPATHselector_international_title = "//*[@id='internationals']";
-    private final String XPATHselector_soutamerica_title = "//*[@id='southAmerica']";
+
+    // XPATH  TITULOS
+    @FindBy(how = How.XPATH, using = "//*[@id='usaMexicoCONCACAF']")
+    private WebElement titleMexicoConcacaf;
+
+    @FindBy(how = How.XPATH, using = "//*[@id='europe']")
+    private WebElement titleEurope;
+
+    @FindBy(how = How.XPATH, using = "//*[@id='internationals']")
+    private WebElement titleInternational;
+
+    @FindBy(how = How.XPATH, using = "//*[@id='southAmerica']")
+    private WebElement titleSouthAmerica;
+
+
 
     //  ELEMENTOS
-    private final String XPATHSElector_europe = "//h3[@id=\"europe\"]/following-sibling::div[@class=\"layout is-split\"][1]//h2";
-    private final String XPATHSElector_international = "//h3[@id=\"internationals\"]/following-sibling::div[@class=\"layout is-split\"][1]//h2";
-    private final String XPATHSElector_southAmerica = "//h3[@id=\"southAmerica\"]/following-sibling::div[@class=\"layout is-split\"][1]//h2";
+    @FindBy(how = How.XPATH, using = "//h3[@id=\"usaMexicoCONCACAF\"]/following-sibling::div[@class=\"layout is-split\"][1]//h2")
+    private List<WebElement> mexicoConcacaf_elements;
 
-    private String XPATHselector_mexicoConcacaf = "//h3[@id=\"usaMexicoCONCACAF\"]/following-sibling::div[@class=\"layout is-split\"][1]//h2";
+    @FindBy(how = How.XPATH, using = "//h3[@id=\"europe\"]/following-sibling::div[@class=\"layout is-split\"][1]//h2")
+    private List<WebElement> europe_elements;
+
+    @FindBy(how = How.XPATH, using = "//h3[@id=\"internationals\"]/following-sibling::div[@class=\"layout is-split\"][1]//h2")
+    private List<WebElement> international_elements;
+
+    @FindBy(how = How.XPATH, using = "//h3[@id=\"southAmerica\"]/following-sibling::div[@class=\"layout is-split\"][1]//h2")
+    private List<WebElement> soutAmerica_elements;
+
+
+
 
 
     // ========    TITULOS ==================
     public WebElement MexicoConcacaftitle(){
-        return webDriverHome.findElement(By.xpath(XPATHselector_mexicoConcacaf_title));
+        return titleMexicoConcacaf;
     }
 
     public WebElement europaTitle(){
-        return webDriverHome.findElement(By.xpath(XPATHselector_europe_title));
+        return titleEurope;
     }
 
     public WebElement internationalTitle(){
-        return webDriverHome.findElement(By.xpath(XPATHselector_international_title));
+        return titleInternational;
     }
 
     public WebElement soutAmericaTitle(){
-        return webDriverHome.findElement(By.xpath(XPATHselector_soutamerica_title));
+        return titleSouthAmerica;
     }
 
 
 
     //================    ELEMENTOS  =======================
     public List<WebElement> MexicoConcacafElements(){
-        return webDriverHome.findElements(By.xpath(XPATHselector_mexicoConcacaf));
+        return mexicoConcacaf_elements;
     }
 
     public List<WebElement> europeElements(){
-        return webDriverHome.findElements(By.xpath(XPATHSElector_europe));
+        return europe_elements;
     }
 
     public List<WebElement> internationalElements(){
-        return webDriverHome.findElements(By.xpath(XPATHSElector_international));
+        return international_elements;
     }
 
     public List<WebElement> southAmericaElements(){
-        return webDriverHome.findElements(By.xpath(XPATHSElector_southAmerica));
+        return soutAmerica_elements;
     }
 
 

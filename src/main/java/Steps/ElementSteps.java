@@ -1,15 +1,17 @@
 package Steps;
 
+import Pages.ESPNPage;
 import org.openqa.selenium.WebDriver;
 import Pages.ElementsPage;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class ElementSteps extends BaseSteps {
-    ElementsPage elementsPage = new ElementsPage(webDriver);
+    ElementsPage elementsPage = PageFactory.initElements(webDriver, ElementsPage.class);
 
     public ElementSteps(WebDriver webDriver) {
         super(webDriver);

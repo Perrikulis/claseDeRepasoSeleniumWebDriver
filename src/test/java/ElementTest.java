@@ -7,7 +7,7 @@ public class ElementTest extends BaseTest{
     ElementSteps elementSteps = new ElementSteps(webDriver);
     LandingsSteps landingsSteps =new LandingsSteps(webDriver);
 
-    @Test
+    @Test(description = "Test form is present in Text Box menu option")
     public void testFormElements() {
         landingsSteps.clickOption(0);
         elementSteps.clickOptionTextBox(0);
@@ -15,7 +15,7 @@ public class ElementTest extends BaseTest{
         Assert.assertEquals(elementSteps.getTextFullName(), "Full Name");
     }
 
-    @Test
+    @Test(description = "Testing color drop down in demoqa.com site")
     public void testDropDown() {
         webDriver.get("https://demoqa.com/select-menu");
         // Select by visibleText: Aqua -> Aqua

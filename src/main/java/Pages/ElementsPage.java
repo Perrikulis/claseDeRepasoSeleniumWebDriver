@@ -3,6 +3,8 @@ package Pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.ui.Select;
 
 import java.util.List;
@@ -11,75 +13,93 @@ public class ElementsPage extends BasePage {
     public ElementsPage(WebDriver webDriver) {
         super(webDriver);
     }
+
     /** Localizadores CSS de Text Box
      * .element-list.collapse.show > ul > #item-0 > span
      * .show > ul > #item-0 > span
      */
-    private String elementOptionCSSLocator =".show > ul > #item-0 > span";
-    private String elementTextBoxOptionXpath = "//span[contains(text(),'Text Box')]";
+    //private String elementOptionCSSLocator =".show > ul > #item-0 > span";
+    @FindBy(how = How.CSS, using = ".show > ul > #item-0 > span")
+    private WebElement elementOption;
+
+    @FindBy(how = How.CSS, using = ".show > ul > #item-0 > span")
+    private List<WebElement> menuOption;
+
+    //private String elementTextBoxOptionXpath = "//span[contains(text(),'Text Box')]";
     /** Localizador CSS de label Full Name en el form
      *  .col-md-3.col-sm-12>#userName-label
      */
-    private String elementFullNameFieldCSSLocator = ".col-md-3.col-sm-12>#userName-label";
-    private String labelFullNameXpath = "//label[@id='userName-label']";
+    //private String elementFullNameFieldCSSLocator = ".col-md-3.col-sm-12>#userName-label";
+    @FindBy(how = How.CSS, using =  ".col-md-3.col-sm-12>#userName-label")
+    private WebElement userNameField;
+
+    //private String labelFullNameXpath = "//label[@id='userName-label']";
+    @FindBy(how = How.CSS, using = "//label[@id='userName-label']")
+    private WebElement userNameLabel;
+
     /** Localizador CSS de label Email en el form
      * .col-md-3.col-sm-12>#userEmail-label
      */
-    private String elementEmailFieldCSSLocator = ".col-md-3.col-sm-12>#userEmail-label";
-    private String labelUserEmailXpath = "//label[@id='userEmail-label']";
+    //private String elementEmailFieldCSSLocator = ".col-md-3.col-sm-12>#userEmail-label";
+    @FindBy(how = How.CSS, using = ".col-md-3.col-sm-12>#userEmail-label")
+    private WebElement elementEmailFieldCSSLocator;
+
     /** Localizador CSS de label Current Address en el form
      * .col-md-3.col-sm-12>#currentAddress-label
      */
-    private String elementCurrentAddressFieldCSSLocator = ".col-md-3.col-sm-12>#currentAddress-label";
+    //private String elementCurrentAddressFieldCSSLocator = ".col-md-3.col-sm-12>#currentAddress-label";
+    @FindBy(how = How.CSS, using = ".col-md-3.col-sm-12>#currentAddress-label")
+    private WebElement currentAddressField;
+
     /** Localizador CSS de label Permanent Address en el form
      * .col-md-3.col-sm-12>#permanentAddress-label
      */
-    private String elementPermanentAddressFieldCSSLocator= ".col-md-3.col-sm-12>#permanentAddress-label";
+    //private String elementPermanentAddressFieldCSSLocator= ".col-md-3.col-sm-12>#permanentAddress-label";
+    @FindBy(how = How.CSS, using = ".col-md-3.col-sm-12>#permanentAddress-label")
+    private WebElement PermanentAddressField;
+
     /** Localizador CSS de boton Submit en el form
      * #submit
      */
-    private String elementSubmitButton = "#submit";
-    private String dropDownColorsId = "oldSelectMenu";
+    //private String elementSubmitButton = "#submit";
+    @FindBy(how = How.ID, id = "submit")
+    private WebElement elementSubmiButton;
+
+    //private String dropDownColorsId = "oldSelectMenu";
+    @FindBy(how = How.ID, id = "oldSelectMenu")
+    private WebElement oldSelectMenu;
 
     public WebElement getElementOption () {
-        WebElement elementOption = webDriver.findElement(By.cssSelector(elementOptionCSSLocator));
         return elementOption;
     }
     public List<WebElement> getMenuOptionsElements (){
-        List<WebElement> menuOptionsElements = webDriver.findElements(By.cssSelector(elementOptionCSSLocator));
-        return menuOptionsElements;
+        return menuOption;
     }
 
     public WebElement getElementFullName (){
-        WebElement elementOptionFullName = webDriver.findElement(By.cssSelector(elementFullNameFieldCSSLocator));
-        return elementOptionFullName;
+        return userNameField;
     }
 
     public WebElement getElementEmail(){
-        WebElement elementEmail = webDriver.findElement(By.cssSelector(elementEmailFieldCSSLocator));
-        return elementEmail;
+        return elementEmailFieldCSSLocator;
     }
 
     public WebElement getElementCurrentAddress(){
-        WebElement elementCurrentAddress = webDriver.findElement(By.cssSelector(elementCurrentAddressFieldCSSLocator));
-        return elementCurrentAddress;
+        return currentAddressField;
     }
 
     public WebElement getElementPermanentAddress(){
-        WebElement elementPermanentAddress = webDriver.findElement(By.cssSelector(elementPermanentAddressFieldCSSLocator));
-        return elementPermanentAddress;
+        return PermanentAddressField;
     }
 
     public WebElement getElementSubmit(){
-        WebElement elementSubmit = webDriver.findElement(By.cssSelector(elementSubmitButton));
-        return elementSubmit;
+        return elementSubmiButton;
     }
 
     /** DropDown regresa un objeto Select
      */
     public Select getDropDownColors () {
-        WebElement colorsDropDown = webDriver.findElement(By.id(dropDownColorsId));
-        Select colorsDropDownSelect = new Select(colorsDropDown);
+        Select colorsDropDownSelect = new Select(oldSelectMenu);
         return colorsDropDownSelect;
     }
 

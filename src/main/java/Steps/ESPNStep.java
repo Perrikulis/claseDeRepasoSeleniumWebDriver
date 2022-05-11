@@ -4,12 +4,13 @@ package Steps;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import Pages.ESPNPage;
+import org.openqa.selenium.support.PageFactory;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
 public class ESPNStep extends BaseSteps{
-    ESPNPage page = new ESPNPage(this.webDriver);
+    ESPNPage page = PageFactory.initElements(webDriver, ESPNPage.class);
 
     public ESPNStep(WebDriver _webDriverBaseStep) {
         super(_webDriverBaseStep);

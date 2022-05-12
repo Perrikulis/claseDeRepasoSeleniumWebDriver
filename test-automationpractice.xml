@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Practice Form Test Suite">
+    <test verbose="2" preserve-order="true" name="C:\Users\cynth\Desktop\claseDeRepasoSeleniumWebDriver">
+        <groups>
+            <run>
+                <include name="automationPractice"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="AutomationPracticeTest"/>
+            <class name="BaseTest"/>
+        </classes>
+    </test>
+</suite>

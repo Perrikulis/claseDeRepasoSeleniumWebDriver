@@ -4,9 +4,11 @@ import org.openqa.selenium.WebDriver;
 import Pages.LandingPage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.PageFactory;
 
 public class LandingsSteps extends BaseSteps{
-    LandingPage landingPage = new LandingPage(webDriver);
+    //LandingPage landingPage = new LandingPage(webDriver);
+    LandingPage landingPage = PageFactory.initElements(webDriver, LandingPage.class);
 
     public LandingsSteps(WebDriver webDriver) {
         super(webDriver);
@@ -39,7 +41,7 @@ public class LandingsSteps extends BaseSteps{
     }
 
     //Dar click en la opcion Elements
-    public void clickOption (int option){
+    public void getMenuOptions (int option){
         landingPage.getMenuOptions().get(option).click();
     }
 }

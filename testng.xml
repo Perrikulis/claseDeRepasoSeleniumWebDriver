@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Elements Tests">
-    <test verbose="2" preserve-order="true" name="/Users/jxr20920/Downloads/claseRepaso">
+    <test verbose="2" preserve-order="true"
+          name="C:\Users\cynth\Desktop\claseDeRepasoSeleniumWebDriver">
         <classes>
             <class name="ElementTest"/>
         </classes>
     </test>
+
 </suite>

@@ -3,6 +3,8 @@ package Pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.How;
 
 import java.util.List;
 
@@ -26,6 +28,31 @@ public class ESPNPage {
 
     private String XPATHselector_mexicoConcacaf = "//h3[@id=\"usaMexicoCONCACAF\"]/following-sibling::div[@class=\"layout is-split\"][1]//h2";
 
+    // Get elements with PageFactory
+    @FindBy(how = How.XPATH, using = "//*[@id='usaMexicoCONCACAF']")
+    private WebElement tittleMexicoConcacaf;
+
+    @FindBy(how = How.XPATH, using = "//*[@id='europe']")
+    private WebElement titleEurope;
+
+    @FindBy(how = How.XPATH, using = "//*[@id='internationals']")
+    private WebElement titleInternational;
+
+    @FindBy(how = How.XPATH, using = "//*[@id='southAmerica']")
+    private WebElement titleSouthAmerica;
+
+    @FindBy(how = How.XPATH, using = "//h3[@id=\"usaMexicoCONCACAF\"]/following-sibling::div[@class=\"layout is-split\"][1]//h2")
+    private List<WebElement> leaguesMexicoConcacaf;
+
+    @FindBy(how = How.XPATH, using = "//h3[@id=\"europe\"]/following-sibling::div[@class=\"layout is-split\"][1]//h2")
+    private List<WebElement> leaguesEurope;
+
+    @FindBy(how = How.XPATH, using = "//h3[@id=\"internationals\"]/following-sibling::div[@class=\"layout is-split\"][1]//h2")
+    private List<WebElement> leaguesInternational;
+
+    @FindBy(how = How.XPATH, using = "//h3[@id=\"southAmerica\"]/following-sibling::div[@class=\"layout is-split\"][1]//h2")
+    private List<WebElement> leaguesSouthAmerica;
+
 
     // ========    TITULOS ==================
     public WebElement MexicoConcacaftitle(){
@@ -43,7 +70,6 @@ public class ESPNPage {
     public WebElement soutAmericaTitle(){
         return webDriverHome.findElement(By.xpath(XPATHselector_soutamerica_title));
     }
-
 
 
     //================    ELEMENTOS  =======================

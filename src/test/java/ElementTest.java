@@ -7,15 +7,15 @@ public class ElementTest extends BaseTest{
     ElementSteps elementSteps = new ElementSteps(webDriver);
     LandingsSteps landingsSteps =new LandingsSteps(webDriver);
 
-    @Test
+    @Test (description = "Esto es una prueba de descripción para seleccionar los textos")
     public void testFormElements() {
-        landingsSteps.clickOption(0);
+        landingsSteps.getMenuOptions(0);
         elementSteps.clickOptionTextBox(0);
         System.out.println(elementSteps.getTextFullName());
         Assert.assertEquals(elementSteps.getTextFullName(), "Full Name");
     }
 
-    @Test
+    @Test (description = "Esto es una prueba de descripciónpara seleccionar el dropdown")
     public void testDropDown() {
         webDriver.get("https://demoqa.com/select-menu");
         // Select by visibleText: Aqua -> Aqua
@@ -33,7 +33,7 @@ public class ElementTest extends BaseTest{
 
     /** Test que valida el Drop Down para la selección de carros
      */
-    @Test
+    @Test  (description = "Esto es una prueba de descripción para ingresan un email inválido")
     public void dropDownCarTest(){
         webDriver.get("https://demoqa.com/select-menu");
         elementSteps.selectCar("Audi");

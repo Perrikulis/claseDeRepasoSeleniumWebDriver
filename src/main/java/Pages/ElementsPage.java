@@ -3,6 +3,8 @@ package Pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.ui.Select;
 
 import java.util.List;
@@ -46,6 +48,35 @@ public class ElementsPage extends BasePage {
     private String dropDownColorsXpath = "//select[@id='oldSelectMenu']";
     public final String dropDownCarsId = "cars";
     public final String dropDownCarsXpath = "//select[@id='cars']";
+
+    //Page Factory
+    @FindBy(how = How.XPATH, using = "//span[contains(text(),'Text Box')]")
+    private WebElement elementOption;
+
+    @FindBy(how = How.CSS, using = ".show > ul > #item-0 > span")
+    private List<WebElement> menuOptionElements;
+
+    @FindBy(how = How.XPATH, using = "//label[@id='userName-label']")
+    private WebElement labelFullName;
+
+    @FindBy(how = How.XPATH, using = "//label[@id='userEmail-label']")
+    private WebElement labelUserEmail;
+
+    @FindBy(how = How.CSS, using = ".col-md-3.col-sm-12>#currentAddress-label")
+    private WebElement elementCurrentAddressField;
+
+    @FindBy(how = How.CSS, using = ".col-md-3.col-sm-12>#permanentAddress-label")
+    private WebElement elementPermanentAddressField;
+
+    @FindBy(how = How.XPATH, using = "//button[@id='submit']")
+    private WebElement submitButton;
+
+    @FindBy(how = How.XPATH, using = "//select[@id='oldSelectMenu']")
+    private WebElement dropDownColors;
+
+    @FindBy(how = How.XPATH, using = "//select[@id='cars']")
+    private WebElement dropDownCars;
+    ////
 
     public WebElement getElementOption () {
         WebElement elementOption = webDriver.findElement(By.cssSelector(elementOptionCSSLocator));

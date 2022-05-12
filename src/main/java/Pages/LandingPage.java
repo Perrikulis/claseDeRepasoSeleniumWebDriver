@@ -3,6 +3,8 @@ package Pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.How;
 
 import java.util.List;
 
@@ -25,6 +27,26 @@ public class LandingPage extends BasePage {
     private final String currentAddressTextBox = ".col-md-9.col-sm-12 > #currentAddress";
     private final String permanentAddressTextBox = ".col-md-9.col-sm-12 > #permanentAddress";
     private final String button = ".text-right.col-md-2.col-sm-12 > button";
+
+    //Page Factory
+    @FindBy(how = How.CSS, using = "div.card.mt-4.top-card")
+    private List<WebElement> menuOptions;
+
+    @FindBy(how = How.CSS, using = ".col-md-9.col-sm-12 > #userName")
+    private WebElement userNameTextBoxCSS;
+
+    @FindBy(how = How.CSS, using = ".col-md-9.col-sm-12 > #userEmail")
+    private WebElement userMailTextBoxCSS;
+
+    @FindBy(how = How.CSS, using = ".col-md-9.col-sm-12 > #currentAddress")
+    private WebElement currentAddressTextBoxCSS;
+
+    @FindBy(how = How.CSS, using = ".col-md-9.col-sm-12 > #permanentAddress")
+    private WebElement permanentAddressTextBoxCSS;
+
+    @FindBy(how = How.CSS, using = ".col-md-9.col-sm-12 > button")
+    private WebElement buttonCSS;
+
 
     public WebElement getUserNameTextBox(){
         return webDriver.findElement(By.cssSelector(userNameTextBox));

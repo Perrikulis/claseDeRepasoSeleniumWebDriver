@@ -11,13 +11,13 @@ public class LandingTest extends BaseTest{
 
     @Test
     public void testMenuOptionElement() {
-        landingsSteps.clickOption(0);
+        landingsSteps.getMenuOptions(0);
         System.out.println(elementSteps.getText());
         Assert.assertEquals(elementSteps.getText(), "Text Box");
     }
     @Test
     public void testFormElements() {
-        landingsSteps.clickOption(0);
+        landingsSteps.getMenuOptions(0);
         elementSteps.clickOptionTextBox(0);
         System.out.println(elementSteps.getTextFullName());
         Assert.assertEquals(elementSteps.getTextFullName(), "Full Name");
@@ -33,7 +33,7 @@ public class LandingTest extends BaseTest{
 
     @Test
     public void testFiveElementsAreDisplayed(){
-        landingsSteps.clickOption(0);
+        landingsSteps.getMenuOptions(0);
         elementSteps.clickOptionTextBox(0);
         System.out.println("----------a click in Text Box option--------------");
 

@@ -53,7 +53,7 @@ public class ElementTest extends BaseTest {
         landingStep.clicOPtion(0);
         elementStep.clickTextBoxOpt();
 
-        elementsPage.getFielTBdFullName().sendKeys("Mario Veri");
+        elementsPage.getFielTBdFullName().sendKeys("Mario Veriss");
         elementsPage.getFielTBdemail().sendKeys("123@ss.com");
         elementsPage.getFielTBcurrentAddress().sendKeys("Camelina 123");
         elementsPage.getFielTBpermanentAddress().sendKeys("Maximi 123");

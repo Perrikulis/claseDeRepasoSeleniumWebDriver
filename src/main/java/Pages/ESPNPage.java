@@ -1,6 +1,5 @@
 package Pages;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -16,12 +15,10 @@ public class ESPNPage {
     }
 
     //  TITUTLOS
-    private final String XPATHselector_mexicoConcacaf_title = "//*[@id='usaMexicoCONCACAF']";
-    private final String XPATHselector_europe_title = "//*[@id='europe']";
     private final String XPATHselector_international_title = "//*[@id='internationals']";
     private final String XPATHselector_soutamerica_title = "//*[@id='southAmerica']";
 
-    //  ELEMENTOS
+    //  ELEMENTOS o EQUIPOS
     private final String XPATHSElector_europe = "//h3[@id=\"europe\"]/following-sibling::div[@class=\"layout is-split\"][1]//h2";
     private final String XPATHSElector_international = "//h3[@id=\"internationals\"]/following-sibling::div[@class=\"layout is-split\"][1]//h2";
     private final String XPATHSElector_southAmerica = "//h3[@id=\"southAmerica\"]/following-sibling::div[@class=\"layout is-split\"][1]//h2";
@@ -37,6 +34,9 @@ public class ESPNPage {
 
     @FindBy(how = How.XPATH, using = "//*[@id='internationals']")
     private WebElement titleInternational;
+
+    @FindBy(how = How.XPATH, using = "//*[@id='usaMexicoCONCACAF']")
+    private WebElement titleMexicoConcacaf;
 
     @FindBy(how = How.XPATH, using = "//*[@id='southAmerica']")
     private WebElement titleSouthAmerica;

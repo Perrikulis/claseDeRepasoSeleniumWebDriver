@@ -5,11 +5,13 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import Pages.ESPNPage;
 import org.openqa.selenium.support.PageFactory;
+import org.testng.Reporter;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
 public class ESPNStep extends BaseSteps{
+
     ESPNPage page = PageFactory.initElements(webDriver,ESPNPage.class);
 
     public ESPNStep(WebDriver _webDriverBaseStep) {
@@ -17,6 +19,7 @@ public class ESPNStep extends BaseSteps{
     }
 
     public String getMexicoConcacafElements(){
+        Reporter.log("Obteniendo valores de CONCACAF");
         WebElement paisesElement = page.MexicoConcacaftitle();
         return paisesElement.getText();
     }

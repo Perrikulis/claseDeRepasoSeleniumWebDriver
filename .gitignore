@@ -14,7 +14,6 @@ target/classes/Pages/landingPage.class
 target/classes/Steps/baseSteps.class
 target/classes/Steps/landingsSteps.class
 target/test-classes/landingTest.class
-target/classes/.DS_Store
 .idea/vcs.xml
 test-results/bullet_point.png
 test-results/collapseall.gif
@@ -36,3 +35,7 @@ test-results/testng-reports2.js
 test-results/testng-results.xml
 test-results/testng.css
 test-results/*
+test-results/Custom suite/claseRepaso.xml
+test-results/Custom suite/testng-failed.xml
+test-results/junitreports/TEST-ESPNTest.xml
+test-results/old/Custom suite/claseRepaso.properties

@@ -1,12 +1,13 @@
 import Steps.ESPNStep;
 import org.testng.Reporter;
-import org.testng.annotations.*;
+import org.testng.annotations.Test;
 
 public class ESPNTest extends BaseTest{
 
     ESPNStep ESPNStep = new ESPNStep(this.webDriver);
 
     @Test(description = "Testing teams in each tournaments in espn.com.mx", groups = {"ESPNTests", "SmokeTest"})
+
     public void testFutbolCategory() {
         webDriver.get("https://www.espn.com.mx/futbol/torneos");
         Reporter.log(ESPNStep.getMexicoConcacafElements());
@@ -19,6 +20,12 @@ public class ESPNTest extends BaseTest{
         System.out.println(ESPNStep.getElements());
         Reporter.log(" =============    =============");
         System.out.println(" =============    =============");
+        for (String team:ESPNStep.getElements()
+             ) {
+            Reporter.log(team);
+        }
+        Reporter.log("=============    =============");
+        System.out.println("=============    =============");
         Reporter.log(ESPNStep.getEuropeTitle());
         System.out.println(ESPNStep.getEuropeTitle());
         Reporter.log(ESPNStep.getElementsEurope().size() + " Elementos");
@@ -29,6 +36,13 @@ public class ESPNTest extends BaseTest{
         System.out.println(ESPNStep.getElementsEurope());
         Reporter.log(" =============    =============");
         System.out.println(" =============    =============");
+        for (String team: ESPNStep.getElementsEurope()
+             ) {
+            Reporter.log(team);
+        }
+        System.out.println(ESPNStep.getElementsEurope());
+        Reporter.log("=============    =============");
+        System.out.println("=============    =============");
         Reporter.log(ESPNStep.getInternationalTitle());
         System.out.println(ESPNStep.getInternationalTitle());
         Reporter.log(ESPNStep.getElementsInternational().size() + " Elementos");
@@ -39,11 +53,19 @@ public class ESPNTest extends BaseTest{
         System.out.println(ESPNStep.getElementsInternational());
         Reporter.log(" =============    =============");
         System.out.println(" =============    =============");
+        for (String team : ESPNStep.getElementsInternational()
+             ) {
+            Reporter.log(team);
+        }
+        System.out.println(ESPNStep.getElementsInternational());
+        Reporter.log("=============    =============");
+        System.out.println("=============    =============");
         Reporter.log(ESPNStep.getSoutAmericaTitle());
         System.out.println(ESPNStep.getSoutAmericaTitle());
         Reporter.log(ESPNStep.getElementsSouthAmerica().size() + " Elementos");
         System.out.println(ESPNStep.getElementsSouthAmerica().size() + " Elementos");
-        for (String team:ESPNStep.getElementsSouthAmerica()){
+        for (String team : ESPNStep.getElementsSouthAmerica()
+             ) {
             Reporter.log(team);
         }
         System.out.println(ESPNStep.getElementsSouthAmerica());

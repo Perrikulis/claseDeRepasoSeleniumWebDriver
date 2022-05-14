@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Elements Tests">
+    <test verbose="2" preserve-order="true" name="/Users/jxr20920/Downloads/claseRepaso">
+        <groups>
+            <run>
+                <include name="SmokeTests" />
+            </run>
+        </groups>
+        <classes>
+            <class name="ESPNTest"/>
+            <class name="ElementTest"/>
+        </classes>
+    </test>
+</suite>

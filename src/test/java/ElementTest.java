@@ -3,11 +3,13 @@ import Steps.LandingsSteps;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import java.io.IOException;
+
 public class ElementTest extends BaseTest{
     ElementSteps elementSteps = new ElementSteps(webDriver);
     LandingsSteps landingsSteps =new LandingsSteps(webDriver);
 
-    @Test (description = "Test to get expected label", groups = "FormElementsTest")
+    @Test(description = "Test form is present in Text Box menu option in demoqa.com site")
     public void testFormElements() {
         landingsSteps.clickOption(0);
         elementSteps.clickOptionTextBox(0);
@@ -15,9 +17,10 @@ public class ElementTest extends BaseTest{
         Assert.assertEquals(elementSteps.getTextFullName(), "Full Name");
     }
 
-    @Test (description = "Test Drop Down (Select) from Colors", groups = "DropDownTest")
-    public void testDropDown() {
-        webDriver.get("https://demoqa.com/select-menu");
+    @Test(description = "Testing Color drop down in demoqa.com site")
+    public void testDropDown() throws IOException {
+        String url = getPropertyValue("URL_TEST_DROP_DOWN");
+        webDriver.get(url);
         // Select by visibleText: Aqua -> Aqua
         elementSteps.selectFavoriteColor("Aqua");
         System.out.println("Selected option is: " + elementSteps.getSelectedColor());
@@ -27,6 +30,7 @@ public class ElementTest extends BaseTest{
         //Select by value: 9 -> Magenta
         elementSteps.selectFavoriteColorValue("9");
         System.out.println("Selected option is: " + elementSteps.getSelectedColor());
+        Assert.assertEquals(elementSteps.getSelectedColor(), getPropertyValue("DROP_DOWN_EXPECTED_COLOR"));
         //Print if Select object is multiple
         System.out.println("Is Select multiple? " + elementSteps.isSelectMultiple());
     }
